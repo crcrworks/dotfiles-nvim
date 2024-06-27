@@ -1,6 +1,6 @@
 # CRCR's nvim configs
 
-## User Plugins
+## [User Plugins](/lua/plugins/) 
 - [hop.nvim](/lua/plugins/hop.lua) : Jump anywhere  
 - [hlchunk.nvim](/lua/plugins/hlchunk.lua) : Highlight the indent line  
 - [nvim-surround](/lua/plugins/surround.lua) : Surround selections with characters  
@@ -13,7 +13,7 @@
 - [copilot](/lua/plugins/copilot.lua) : Copilot in nvim
 - [copilot-chat](/lua/plugins/copilot-chat.lua) Chat with copilot in nvim
 
-## Community plugins
+## [Community plugins](/lua/community.lua) 
 - astrocommunity.pack.lua
 - astrocommunity.pack.typescript-all-in-one
 - astrocommunity.pack.json
@@ -27,7 +27,7 @@
 - astrocommunity.markdown-and-latex.markdown-preview-nvim
 - astrocommunity.motion.tabout-nvim
 
-## Keymaps
+## [Keymaps](/lua/plugins/astrocore.lua) 
 
 ### Navigator
 - \<Tab> : Go next buffer
