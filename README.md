@@ -1,17 +1,21 @@
 # CRCR's nvim configs
 
-## [User Plugins](/lua/plugins/) 
-- [hop.nvim](/lua/plugins/hop.lua) : Jump anywhere  
-- [hlchunk.nvim](/lua/plugins/hlchunk.lua) : Highlight the indent line  
-- [nvim-surround](/lua/plugins/surround.lua) : Surround selections with characters  
-- [xcodebuild.nvim](/lua/plugins/xcodebuild.lua) : Building, debugging, and testing for xcode  
-- [vim-ghost](/lua/plugins/ghost.lua) : Edit browser textarea content in vim/neovim  
-- [everforest](/lua/plugins/everforest.lua) : Everforest colorscheme for nvim  
-- [vim-startuptime](/lua/plugins/startuptime.lua) : Everforest colorscheme for nvim  
-- [noice.nvim](/lua/plugins/noice.lua) : Chagne view of messages. cmdline, and popupmenu  
-- [nvim-scrollbar](/lua/plugins/scrollbar.lua) : scrollbar in nvim
-- [copilot](/lua/plugins/copilot.lua) : Copilot in nvim
-- [copilot-chat](/lua/plugins/copilot-chat.lua) Chat with copilot in nvim
+## [User Plugins](/lua/plugins/)
+- [hop.nvim](https://github.com/hadronized/hop.nvim) : Jump anywhere
+- [hlchunk.nvim](https://github.com/shellRaining/hlchunk.nvim) : Highlight the indent line
+- [nvim-surround](https://github.com/kylechui/nvim-surround) : Surround selections with characters
+- [xcodebuild.nvim](https://github.com/wojciech-kulik/xcodebuild.nvim) : Building, debugging, and testing for xcode
+- [vim-ghost](https://github.com/raghur/vim-ghost) : Edit browser textarea content in vim/neovim
+- [everforest](https://github.com/sainnhe/everforest) : Everforest colorscheme for nvim
+- [vim-startuptime](https://github.com/rhysd/vim-startuptime) : Everforest colorscheme for nvim
+- [noice.nvim](https://github.com/folke/noice.nvim) : Chagne view of messages. cmdline, and popupmenu
+- [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim) : Preview markdown as writing
+- [vim-fugitive](https://github.com/tpope/vim-fugitive) : Run git command in v
+- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) : Super fast git decorations
+- [nvim-scrollbar](https://github.com/petertriho/nvim-scrollbar) : Scrollbar in nvim
+- [at-vim-coder](https://github.com/ka-tsu-mo/at-vim-coder) : Atcoder in nvim
+- [copilot](https://github.com/zbirenbaum/copilot.lua) : Copilot in nvim
+- [CopilotChat.nvim](https://github.com/CopilotC-Nvim/CopilotChat.nvim) Chat with copilot in nvim
 
 ## [Community plugins](/lua/community.lua) 
 - astrocommunity.pack.lua
