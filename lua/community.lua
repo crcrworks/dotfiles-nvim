@@ -1,4 +1,4 @@
--- AstroCommunity: import any community modules here
+-- astrocommunity import any community modules here
 -- We import this file in `lazy_setup.lua` before the `plugins/` folder.
 -- This guarantees that the specs are processed before any user plugins.
 
@@ -18,4 +18,11 @@ return {
 
   { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
   { import = "astrocommunity.motion.tabout-nvim" },
+  { import = "astrocommunity.recipes.telescope-nvchad-theme" },
+  { import = "astrocommunity.keybinding.nvcheatsheet-nvim" },
+
+  { import = "astrocommunity.recipes.vscode-icons" },
+
+  { import = "astrocommunity.completion.cmp-spell" },
+  { import = "astrocommunity.completion.copilot-cmp" },
 }
