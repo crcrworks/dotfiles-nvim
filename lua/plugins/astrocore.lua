@@ -166,10 +166,41 @@ return {
           "<cmd>lua CopilotChatBuffer()<CR>",
           desc = "Open Copilot Chat",
         },
+        ["<Leader>fn"] = {
+          ":Telescope noice<CR>",
+          desc = "Find Notification",
+        },
+
+        ["<Leader>c"] = {
+          function()
+            local bufs = vim.fn.getbufinfo { buflisted = true }
+            require("astrocore.buffer").close(0)
+            if require("astrocore").is_available "alpha-nvim" and not bufs[2] then require("alpha").start() end
+          end,
+          desc = "Close buffer",
+        },
       },
       t = {
         -- setting a mapping to false will disable it
         -- ["<esc>"] = false,
+      },
+    },
+    autocmds = {
+      -- disable alpha auto start
+      alpha_autostart = false,
+      restore_session = {
+        {
+          event = "VimEnter",
+          desc = "Restore previous directory session if neovim opened with no arguments",
+          nested = true, -- trigger other auto commands as buffers open
+          callback = function()
+            -- Only load the session if nvim was started with no args
+            if vim.fn.argc(-1) == 0 then
+              -- try to load a directory session using the current working directory
+              require("resession").load(vim.fn.getcwd(), { dir = "dirsession", silence_errors = true })
+            end
+          end,
+        },
       },
     },
   },
