@@ -170,6 +170,12 @@ return {
           ":Telescope noice<CR>",
           desc = "Find Notification",
         },
+
+        -- Obsidian
+        ["<Leader>O"] = { desc = "Obsidian" },
+        ["<Leader>Of"] = { ":ObsidianSearch<CR>", desc = "Find Obsidian Note" },
+        ["<Leader>Ot"] = { ":ObsidianTag<CR>", desc = "Find Obsidian Tag" },
+        ["<Leader>OT"] = { ":ObsidianTemplate<CR>", desc = "Insert Obsidian Template" },
       },
       t = {
         -- setting a mapping to false will disable it
