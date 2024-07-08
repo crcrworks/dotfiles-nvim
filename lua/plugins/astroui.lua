@@ -8,16 +8,48 @@ return {
   "AstroNvim/astroui",
   ---@type AstroUIOpts
   opts = {
+    status = {
+      colors = {
+        bg = "#272E33",
+        section_bg = "#272E33",
+        winbar_bg = "#272E33",
+        winbarnc_bg = "#272E33",
+      },
+    },
     -- change colorscheme
     colorscheme = "everforest",
+
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
-      init = { -- this table overrides highlights in all themes
-        -- Normal = { bg = "#000000" },
-      },
-      astrotheme = { -- a table of overrides/changes when applying the astrotheme theme
-        -- Normal = { bg = "#000000" },
-      },
+      -- set highlights for all themes
+      -- use a function override to let us use lua to retrieve
+      -- colors from highlight group there is no default table
+      -- so we don't need to put a parameter for this function
+      init = function()
+        local get_hlgroup = require("astroui").get_hlgroup
+        -- get highlights from highlight groups
+        local normal = get_hlgroup "Normal"
+        local fg, bg = normal.fg, "#2E383C"
+        local bg_alt = "#374145"
+        local green = "#A7C080"
+        local red = "#D699B6"
+        -- return a table of highlights for telescope based on
+        -- colors gotten from highlight groups
+        return {
+          TelescopeBorder = { fg = bg_alt, bg = bg },
+          TelescopeNormal = { bg = bg },
+          TelescopePreviewBorder = { fg = bg, bg = bg },
+          TelescopePreviewNormal = { bg = bg },
+          TelescopePreviewTitle = { fg = bg, bg = green },
+          TelescopePromptBorder = { fg = bg_alt, bg = bg_alt },
+          TelescopePromptNormal = { fg = fg, bg = bg_alt },
+          TelescopePromptPrefix = { fg = red, bg = bg_alt },
+          TelescopePromptTitle = { fg = bg, bg = red },
+          TelescopeResultsBorder = { fg = bg, bg = bg },
+          TelescopeResultsNormal = { bg = bg },
+          TelescopeResultsTitle = { fg = bg, bg = bg },
+        }
+      end,
     },
     -- Icons can be configured throughout the interface
     icons = {
