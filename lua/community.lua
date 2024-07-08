@@ -23,6 +23,8 @@ return {
 
   { import = "astrocommunity.recipes.vscode-icons" },
 
+  { import = "astrocommunity.media.cord-nvim" },
+
   { import = "astrocommunity.completion.cmp-spell" },
   { import = "astrocommunity.completion.copilot-cmp" },
 }
