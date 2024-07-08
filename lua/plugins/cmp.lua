@@ -7,8 +7,8 @@ return {
       winhighlight = "Normal:StatusLineNC,FloatBorder:FloatBorder,CursorLine:FloatShadow,Search:None",
     }
 
-    vim.opt.spell = true
-    vim.opt.spelllang = { "en_us" }
+    -- vim.opt.spell = true
+    -- vim.opt.spelllang = { "en_us" }
 
     opts.window = {
       completion = cmp.config.window.bordered(border_opts),
