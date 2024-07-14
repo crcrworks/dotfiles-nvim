@@ -154,7 +154,7 @@ return {
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
 
         -- Copilot
-        ["<C-c>"] = {
+        ["<C-a>"] = {
           "<cmd>CopilotChat<CR>",
           desc = "Open Copilot Chat",
         },
