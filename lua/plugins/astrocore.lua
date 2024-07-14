@@ -74,47 +74,47 @@ return {
         },
 
         ["<leader>fd"] = {
-          ":TodoTelescope<CR>",
+          "<cmd>TodoTelescope<CR>",
           desc = "Find Todo",
         },
 
         -- hop.nvim
         ["fw"] = {
-          ":HopWord<CR>",
+          "<cmd>HopWord<CR>",
           desc = "Hop to word",
         },
         ["fl"] = {
-          ":HopLine<CR>",
+          "<cmd>HopLine<CR>",
           desc = "Hop to line",
         },
         -- Xcodebuild
         ["<leader>x"] = { name = "Xcodebuild" },
         ["<leader>xs"] = {
-          ":XcodebuildSetup<CR>",
+          "<cmd>XcodebuildSetup<CR>",
           desc = "Setup",
         },
         ["<leader>xd"] = {
-          ":XcodebuildSelectDevice<CR>",
+          "<cmd>XcodebuildSelectDevice<CR>",
           desc = "Select Device",
         },
         ["<leader>xp"] = {
-          ":XcodebuildSelectProject<CR>",
+          "<cmd>XcodebuildSelectProject<CR>",
           desc = "Select Project",
         },
         ["<leader>xo"] = {
-          ":XcodebuildOpenLogs<CR>",
+          "<cmd>XcodebuildOpenLogs<CR>",
           desc = "Open Log",
         },
         ["<leader>xb"] = {
-          ":XcodebuildBuild<CR>",
+          "<cmd>XcodebuildBuild<CR>",
           desc = "Build",
         },
         ["<leader>xr"] = {
-          ":XcodebuildRun<CR>",
+          "<cmd>XcodebuildRun<CR>",
           desc = "Run",
         },
         ["<leader>xB"] = {
-          ":XcodebuildBuildRun<CR>",
+          "<cmd>XcodebuildBuildRun<CR>",
           desc = "Build and Run",
         },
 
@@ -155,7 +155,7 @@ return {
 
         -- Copilot
         ["<C-c>"] = {
-          ":CopilotChat<CR>",
+          "<cmd>CopilotChat<CR>",
           desc = "Open Copilot Chat",
         },
         ["<C-p>"] = {
@@ -167,38 +167,21 @@ return {
           desc = "Open Copilot Chat",
         },
         ["<Leader>fn"] = {
-          ":Telescope noice<CR>",
+          "<cmd>Telescope noice<CR>",
           desc = "Find Notification",
         },
 
         -- Obsidian
         ["<Leader>O"] = { desc = "Obsidian" },
-        ["<Leader>Of"] = { ":ObsidianSearch<CR>", desc = "Find Obsidian Note" },
-        ["<Leader>Ot"] = { ":ObsidianTag<CR>", desc = "Find Obsidian Tag" },
-        ["<Leader>OT"] = { ":ObsidianTemplate<CR>", desc = "Insert Obsidian Template" },
+        ["<Leader>Of"] = { "<cmd>ObsidianSearch<CR>", desc = "Find Obsidian Note" },
+        ["<Leader>Ot"] = { "<cmd>ObsidianTag<CR>", desc = "Find Obsidian Tag" },
+        ["<Leader>OT"] = { "<cmd>ObsidianTemplate<CR>", desc = "Insert Obsidian Template" },
       },
       t = {
         -- setting a mapping to false will disable it
         -- ["<esc>"] = false,
       },
     },
-    autocmds = {
-      -- disable alpha auto start
-      alpha_autostart = false,
-      restore_session = {
-        {
-          event = "VimEnter",
-          desc = "Restore previous directory session if neovim opened with no arguments",
-          nested = true, -- trigger other auto commands as buffers open
-          callback = function()
-            -- Only load the session if nvim was started with no args
-            if vim.fn.argc(-1) == 0 then
-              -- try to load a directory session using the current working directory
-              require("resession").load(vim.fn.getcwd(), { dir = "dirsession", silence_errors = true })
-            end
-          end,
-        },
-      },
-    },
+    autocmds = {},
   },
 }
