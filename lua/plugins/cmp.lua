@@ -19,7 +19,7 @@ return {
       { name = "buffer" },
       { name = "path" },
       { name = "treesitter" },
-      { name = "copilot", group_index = 2 },
+      -- { name = "copilot", group_index = 2 },
       {
         name = "spell",
         option = {
