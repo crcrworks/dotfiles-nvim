@@ -1,5 +1,6 @@
 return {
   "petertriho/nvim-scrollbar",
+  event = "BufRead",
   config = function()
     -- gruvbox-material color pallet
     -- https://user-images.githubusercontent.com/58662350/213884009-87533cf3-e3c5-4d46-85f7-f6993b6dd887.png
