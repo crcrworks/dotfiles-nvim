@@ -8,12 +8,15 @@ return {
   "AstroNvim/astroui",
   ---@type AstroUIOpts
   opts = {
+    style = {
+      border = false,
+    },
     status = {
       colors = {
-        bg = "#272E33",
-        section_bg = "#272E33",
-        winbar_bg = "#272E33",
-        winbarnc_bg = "#272E33",
+        bg = "#2E383C",
+        section_bg = "#2E383C",
+        -- winbar_bg = "#272E33",
+        -- winbarnc_bg = "#272E33",
       },
     },
     -- change colorscheme

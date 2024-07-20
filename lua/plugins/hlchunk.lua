@@ -4,7 +4,6 @@ return {
   config = function()
     require("hlchunk").setup {
       ---@diagnostic disable-next-line: assign-type-mismatch
-      context = "",
       chunk = {
         enable = true,
         notify = true,
@@ -15,7 +14,7 @@ return {
           vertical_line = "│",
           left_top = "╭",
           left_bottom = "╰",
-          right_arrow = " ",
+          right_arrow = ">",
         },
         style = {
           { fg = "#859289" },
@@ -30,7 +29,7 @@ return {
 
       indent = {
         enable = true,
-        use_treesitter = false,
+        use_treesitter = true,
         chars = {
           "│",
         },
@@ -44,17 +43,6 @@ return {
         use_treesitter = true,
         style = "#859289",
       },
-
-      -- blank = {
-      --   enable = true,
-      --   use_treesitter = true,
-      --   chars = {
-      --     " ",
-      --   },
-      --   style = {
-      --     vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID "Whitespace"), "fg", "gui"),
-      --   },
-      -- },
     }
   end,
 }
