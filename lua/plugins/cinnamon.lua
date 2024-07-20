@@ -1,5 +1,7 @@
 return {
   "declancm/cinnamon.nvim",
+  lazy = true,
+  event = "BufRead",
   version = "*", -- use latest release
   opts = {
     disabled = false,
@@ -19,7 +21,7 @@ return {
         -- Number of cursor/window lines moved per step
         vertical = 1,
         -- Number of cursor/window columns moved per step
-        horizontal = 2,
+        horizontal = 1,
       },
       max_delta = {
         -- Maximum distance for line movements before scroll
