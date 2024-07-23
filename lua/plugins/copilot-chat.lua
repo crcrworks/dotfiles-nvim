@@ -17,22 +17,23 @@ return {
       { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
       { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
     },
-    opts = {
-      debug = true,
-    },
     config = function()
       require("CopilotChat.integrations.cmp").setup()
 
+      local select = require "CopilotChat.select"
       require("CopilotChat").setup {
+        debug = false,
+        model = "gpt-4",
+        show_help = false,
         mappings = {
           complete = {
             insert = "",
           },
+          close = {
+            insert = "",
+            normal = "<Esc>",
+          },
         },
-      }
-
-      local select = require "CopilotChat.select"
-      require("CopilotChat").setup {
         prompts = {
           Review = {
             prompt = "/COPILOT_REVIEW 選択したコードを日本語でレビューしてください。",
