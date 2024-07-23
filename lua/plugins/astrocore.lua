@@ -35,13 +35,15 @@ return {
         signcolumn = "auto", -- sets vim.opt.signcolumn to auto
         wrap = false, -- sets vim.opt.wrap
         conceallevel = 2,
+        numberwidth = 1,
       },
       g = { -- vim.g.<key>
-        -- configure global vim variables (vim.g)
+
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
       },
     },
+
     -- Mappings can be configured through AstroCore as well.
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
@@ -54,14 +56,14 @@ return {
         H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
         -- window
-        ["<A-K>"] = { "<cmd>resize -2<CR>", desc = "Resize split up" },
-        ["<A-J>"] = { "<cmd>resize +2<CR>", desc = "Resize split down" },
-        ["<A-H>"] = { "<cmd>vertical resize -2<CR>", desc = "Resize split left" },
-        ["<A-L>"] = { "<cmd>vertical resize +2<CR>", desc = "Resize split right" },
+        ["<M-K>"] = { "<cmd>resize -2<CR>", desc = "Resize split up" },
+        ["<M-J>"] = { "<cmd>resize +2<CR>", desc = "Resize split down" },
+        ["<M-H>"] = { "<cmd>vertical resize -2<CR>", desc = "Resize split left" },
+        ["<M-L>"] = { "<cmd>vertical resize +2<CR>", desc = "Resize split right" },
 
         -- multi cursor
-        ["<A-k>"] = { "<cmd>call vm#commands#add_cursor_up(0, v:count1)<cr>" },
-        ["<A-j>"] = { "<cmd>call vm#commands#add_cursor_down(0, v:count1)<cr>" },
+        ["<M-k>"] = { "<cmd>call vm#commands#add_cursor_up(0, v:count1)<cr>" },
+        ["<M-j>"] = { "<cmd>call vm#commands#add_cursor_down(0, v:count1)<cr>" },
 
         -- Navigate Buffer
         ["<Tab>"] = {
@@ -77,8 +79,12 @@ return {
           "<cmd>TodoTelescope<CR>",
           desc = "Find Todo",
         },
+        ["<leader>fi"] = {
+          function() require("telescope.builtin").highlights {} end,
+          desc = "Find Todo",
+        },
 
-        -- hop.nvim
+        -- motion
         ["fw"] = {
           "<cmd>HopWord<CR>",
           desc = "Hop to word",
@@ -86,6 +92,10 @@ return {
         ["fl"] = {
           "<cmd>HopLine<CR>",
           desc = "Hop to line",
+        },
+        ["fo"] = {
+          function() require("telescope.builtin").jumplist {} end,
+          desc = "Find Todo",
         },
         -- Xcodebuild
         ["<leader>x"] = { name = "Xcodebuild" },
@@ -154,15 +164,15 @@ return {
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
 
         -- Copilot
-        ["<C-a>"] = {
+        ["<Leader>zc"] = {
           "<cmd>CopilotChat<CR>",
           desc = "Open Copilot Chat",
         },
-        ["<C-p>"] = {
+        ["<Leader>zp"] = {
           "<cmd>lua ShowCopilotChatActionPrompt()<CR>",
           desc = "Show Copilot Chat Action Prompt",
         },
-        ["<C-CR>"] = {
+        ["<Leader>za"] = {
           "<cmd>lua CopilotChatBuffer()<CR>",
           desc = "Open Copilot Chat",
         },
