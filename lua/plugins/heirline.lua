@@ -12,7 +12,7 @@ return {
     },
   },
   opts = function(_, opts)
-    opts.winbar = nil
+    -- opts.winbar = nil
     local status = require "astroui.status"
     opts.statusline = { -- statusline
       hl = { fg = "fg", bg = "bg" },
