@@ -186,6 +186,8 @@ return {
         ["<Leader>Of"] = { "<cmd>ObsidianSearch<CR>", desc = "Find Obsidian Note" },
         ["<Leader>Ot"] = { "<cmd>ObsidianTag<CR>", desc = "Find Obsidian Tag" },
         ["<Leader>OT"] = { "<cmd>ObsidianTemplate<CR>", desc = "Insert Obsidian Template" },
+        ["<Leader>Od"] = { "<cmd>ObsidianToday<CR>", desc = "Open Daily Note" },
+        ["<Leader>Os"] = { "<cmd>ObsidianQuickSwitch<CR>", desc = "Open Daily Note" },
       },
       t = {
         -- setting a mapping to false will disable it
