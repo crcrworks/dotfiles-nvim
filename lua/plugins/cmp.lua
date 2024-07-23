@@ -16,10 +16,11 @@ return {
     }
     opts.sources = cmp.config.sources {
       { name = "nvim_lsp" },
+      { name = "nerdfont" },
       { name = "buffer" },
       { name = "path" },
       { name = "treesitter" },
-      -- { name = "copilot", group_index = 2 },
+      { name = "copilot", group_index = 2 },
       {
         name = "spell",
         option = {
