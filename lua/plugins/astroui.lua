@@ -13,10 +13,10 @@ return {
     },
     status = {
       colors = {
-        bg = "#2E383C",
-        section_bg = "#2E383C",
-        -- winbar_bg = "#272E33",
-        -- winbarnc_bg = "#272E33",
+        bg = "#2D353B",
+        section_bg = "#2D353B",
+        -- winbar_bg = "#2D353B",
+        -- winbarnc_bg = "#2D353B",
       },
     },
     -- change colorscheme
@@ -32,8 +32,8 @@ return {
         local get_hlgroup = require("astroui").get_hlgroup
         -- get highlights from highlight groups
         local normal = get_hlgroup "Normal"
-        local fg, bg = normal.fg, "#2E383C"
-        local bg_alt = "#374145"
+        local fg, bg = normal.fg, "#2D353B"
+        local bg_alt = "#2D353B"
         local green = "#A7C080"
         local red = "#D699B6"
         -- return a table of highlights for telescope based on
@@ -51,6 +51,11 @@ return {
           TelescopeResultsBorder = { fg = bg, bg = bg },
           TelescopeResultsNormal = { bg = bg },
           TelescopeResultsTitle = { fg = bg, bg = bg },
+          WinBar = { fg = "#9DA9A0", bg = bg },
+          NeoTreeNormal = { fg = "#D3C6AA", bg = bg },
+          NeoTreeTabInactive = { fg = "#D3C6AA", bg = "#232A2E" },
+          NeoTreeEndOfBuffer = { fg = "#D3C6AA", bg = bg },
+          NeoTreeTabSeparatorInactive = { fg = "#232A2E", bg = "#232A2E" },
         }
       end,
     },
