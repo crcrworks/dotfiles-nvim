@@ -3,6 +3,7 @@ return {
   config = function()
     local dap = require "dap"
     local vstuc_path = os.getenv "HOME" .. "/.vscode/extensions/visualstudiotoolsforunity.vstuc-1.0.2/bin/"
+    require("overseer").enable_dap()
 
     dap.adapters.vstuc = {
       type = "executable",

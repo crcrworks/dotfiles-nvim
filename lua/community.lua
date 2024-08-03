@@ -15,6 +15,7 @@ return {
   { import = "astrocommunity.pack.cs" },
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.markdown" },
+  { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.svelte" },
 
   { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },

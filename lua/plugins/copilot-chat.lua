@@ -33,7 +33,12 @@ return {
             insert = "",
             normal = "<Esc>",
           },
+          reset = {
+            insert = "",
+            normal = "r",
+          },
         },
+        selection = function(source) return select.visual(source) or select.buffer(source) end,
         prompts = {
           Review = {
             prompt = "/COPILOT_REVIEW 選択したコードを日本語でレビューしてください。",

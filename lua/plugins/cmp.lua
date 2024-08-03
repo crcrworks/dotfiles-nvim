@@ -20,7 +20,8 @@ return {
       { name = "buffer" },
       { name = "path" },
       { name = "treesitter" },
-      { name = "copilot", group_index = 2 },
+      { name = "copilot", group_index = 1, priority = 100 },
+      { name = "crates" },
       {
         name = "spell",
         option = {

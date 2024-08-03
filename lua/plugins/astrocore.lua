@@ -47,23 +47,34 @@ return {
     -- Mappings can be configured through AstroCore as well.
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
+      v = {
+        ["<C-a>"] = { function() require("dial.map").manipulate("increment", "visual") end },
+        ["<C-x>"] = { function() require("dial.map").manipulate("decrement", "visual") end },
+        ["g<C-a>"] = { function() require("dial.map").manipulate("increment", "gvisual") end },
+        ["g<C-x>"] = { function() require("dial.map").manipulate("decrement", "gvisual") end },
+      },
       -- first key is the mode
       n = {
         -- second key is the lefthand side of the map
+
+        ["<C-a>"] = { function() require("dial.map").manipulate("increment", "normal") end },
+        ["<C-x>"] = { function() require("dial.map").manipulate("decrement", "normal") end },
+        ["g<C-a>"] = { function() require("dial.map").manipulate("increment", "gnormal") end },
+        ["g<C-x>"] = { function() require("dial.map").manipulate("decrement", "gnormal") end },
 
         -- navigate buffer tabs with `H` and `L`
         L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
-        -- window
-        ["<M-K>"] = { "<cmd>resize -2<CR>", desc = "Resize split up" },
-        ["<M-J>"] = { "<cmd>resize +2<CR>", desc = "Resize split down" },
-        ["<M-H>"] = { "<cmd>vertical resize -2<CR>", desc = "Resize split left" },
-        ["<M-L>"] = { "<cmd>vertical resize +2<CR>", desc = "Resize split right" },
-
-        -- multi cursor
-        ["<M-k>"] = { "<cmd>call vm#commands#add_cursor_up(0, v:count1)<cr>" },
-        ["<M-j>"] = { "<cmd>call vm#commands#add_cursor_down(0, v:count1)<cr>" },
+        -- -- window
+        -- ["<M-K>"] = { "<cmd>resize -2<CR>", desc = "Resize split up" },
+        -- ["<M-J>"] = { "<cmd>resize +2<CR>", desc = "Resize split down" },
+        -- ["<M-H>"] = { "<cmd>vertical resize -2<CR>", desc = "Resize split left" },
+        -- ["<M-L>"] = { "<cmd>vertical resize +2<CR>", desc = "Resize split right" },
+        --
+        -- -- multi cursor
+        -- ["<M-k>"] = { "<cmd>call vm#commands#add_cursor_up(0, v:count1)<cr>" },
+        -- ["<M-j>"] = { "<cmd>call vm#commands#add_cursor_down(0, v:count1)<cr>" },
 
         -- Navigate Buffer
         ["<Tab>"] = {
@@ -128,25 +139,25 @@ return {
           desc = "Build and Run",
         },
 
-        ["<leader>sw"] = {
-          function()
-            local wezterm_config_dir = vim.fn.expand "~/.config/wezterm"
-            local search_dirs = { wezterm_config_dir }
-            local utils = require "astrocore"
-
-            if vim.fn.isdirectory(wezterm_config_dir) ~= 1 then
-              utils.notify("WezTerm config directory not found", vim.log.levels.WARN)
-            else
-              require("telescope.builtin").find_files {
-                prompt_title = "WezTerm Config Files",
-                search_dirs = search_dirs,
-                cwd = wezterm_config_dir,
-                follow = true,
-              }
-            end
-          end,
-          desc = "WezTerm Config",
-        },
+        -- ["<leader>sw"] = {
+        --   function()
+        --     local wezterm_config_dir = vim.fn.expand "~/.config/wezterm"
+        --     local search_dirs = { wezterm_config_dir }
+        --     local utils = require "astrocore"
+        --
+        --     if vim.fn.isdirectory(wezterm_config_dir) ~= 1 then
+        --       utils.notify("WezTerm config directory not found", vim.log.levels.WARN)
+        --     else
+        --       require("telescope.builtin").find_files {
+        --         prompt_title = "WezTerm Config Files",
+        --         search_dirs = search_dirs,
+        --         cwd = wezterm_config_dir,
+        --         follow = true,
+        --       }
+        --     end
+        --   end,
+        --   desc = "WezTerm Config",
+        -- },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bD"] = {
