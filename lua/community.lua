@@ -14,6 +14,7 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.cs" },
   { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.svelte" },
@@ -26,6 +27,7 @@ return {
   { import = "astrocommunity.recipes.vscode-icons" },
 
   { import = "astrocommunity.media.cord-nvim" },
+  { import = "astrocommunity.markdown-and-latex.vimtex" },
 
   { import = "astrocommunity.completion.cmp-spell" },
   { import = "astrocommunity.completion.copilot-cmp" },
