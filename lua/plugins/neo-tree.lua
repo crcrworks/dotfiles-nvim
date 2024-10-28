@@ -13,6 +13,12 @@ return {
     f.hide_by_pattern = { -- uses glob style patterns
       "*.meta",
       "*.unity",
+      "*.fls",
+      "*.aux",
+      "*.dvi",
+      "*.pdf",
+      "*.gz",
+      "*.fdb_latexmk",
     }
   end,
 }
