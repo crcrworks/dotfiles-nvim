@@ -2,6 +2,7 @@ return {
   "declancm/cinnamon.nvim",
   lazy = true,
   event = "BufRead",
+  enabled = false,
   version = "*", -- use latest release
   opts = {
     disabled = false,
