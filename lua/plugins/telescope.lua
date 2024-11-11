@@ -8,7 +8,6 @@ return {
       ".png",
       ".pdf",
       ".mat",
-      ".conf",
       ".asmdef",
       ".*lock*",
       "ProjectSettings/*",
