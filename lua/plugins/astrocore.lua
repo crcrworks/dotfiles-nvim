@@ -47,24 +47,13 @@ return {
     -- Mappings can be configured through AstroCore as well.
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
-      v = {
-        ["<C-a>"] = { function() require("dial.map").manipulate("increment", "visual") end },
-        ["<C-x>"] = { function() require("dial.map").manipulate("decrement", "visual") end },
-        ["g<C-a>"] = { function() require("dial.map").manipulate("increment", "gvisual") end },
-        ["g<C-x>"] = { function() require("dial.map").manipulate("decrement", "gvisual") end },
-      },
+      v = {},
       -- first key is the mode
       n = {
-        -- second key is the lefthand side of the map
-
-        ["<C-a>"] = { function() require("dial.map").manipulate("increment", "normal") end },
-        ["<C-x>"] = { function() require("dial.map").manipulate("decrement", "normal") end },
-        ["g<C-a>"] = { function() require("dial.map").manipulate("increment", "gnormal") end },
-        ["g<C-x>"] = { function() require("dial.map").manipulate("decrement", "gnormal") end },
 
         -- navigate buffer tabs with `H` and `L`
-        L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
-        H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+        -- L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
+        -- H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
         -- -- window
         -- ["<M-K>"] = { "<cmd>resize -2<CR>", desc = "Resize split up" },
@@ -72,7 +61,7 @@ return {
         -- ["<M-H>"] = { "<cmd>vertical resize -2<CR>", desc = "Resize split left" },
         -- ["<M-L>"] = { "<cmd>vertical resize +2<CR>", desc = "Resize split right" },
         --
-        -- -- multi cursor
+        -- multi cursor
         -- ["<M-k>"] = { "<cmd>call vm#commands#add_cursor_up(0, v:count1)<cr>" },
         -- ["<M-j>"] = { "<cmd>call vm#commands#add_cursor_down(0, v:count1)<cr>" },
 
@@ -85,79 +74,6 @@ return {
           function() require("astrocore.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
           desc = "Previous buffer",
         },
-
-        ["<leader>fd"] = {
-          "<cmd>TodoTelescope<CR>",
-          desc = "Find Todo",
-        },
-        ["<leader>fi"] = {
-          function() require("telescope.builtin").highlights {} end,
-          desc = "Find Todo",
-        },
-
-        -- motion
-        ["fw"] = {
-          "<cmd>HopWord<CR>",
-          desc = "Hop to word",
-        },
-        ["fl"] = {
-          "<cmd>HopLine<CR>",
-          desc = "Hop to line",
-        },
-        ["fo"] = {
-          function() require("telescope.builtin").jumplist {} end,
-          desc = "Find Todo",
-        },
-        -- Xcodebuild
-        ["<leader>x"] = { name = "Xcodebuild" },
-        ["<leader>xs"] = {
-          "<cmd>XcodebuildSetup<CR>",
-          desc = "Setup",
-        },
-        ["<leader>xd"] = {
-          "<cmd>XcodebuildSelectDevice<CR>",
-          desc = "Select Device",
-        },
-        ["<leader>xp"] = {
-          "<cmd>XcodebuildSelectProject<CR>",
-          desc = "Select Project",
-        },
-        ["<leader>xo"] = {
-          "<cmd>XcodebuildOpenLogs<CR>",
-          desc = "Open Log",
-        },
-        ["<leader>xb"] = {
-          "<cmd>XcodebuildBuild<CR>",
-          desc = "Build",
-        },
-        ["<leader>xr"] = {
-          "<cmd>XcodebuildRun<CR>",
-          desc = "Run",
-        },
-        ["<leader>xB"] = {
-          "<cmd>XcodebuildBuildRun<CR>",
-          desc = "Build and Run",
-        },
-
-        -- ["<leader>sw"] = {
-        --   function()
-        --     local wezterm_config_dir = vim.fn.expand "~/.config/wezterm"
-        --     local search_dirs = { wezterm_config_dir }
-        --     local utils = require "astrocore"
-        --
-        --     if vim.fn.isdirectory(wezterm_config_dir) ~= 1 then
-        --       utils.notify("WezTerm config directory not found", vim.log.levels.WARN)
-        --     else
-        --       require("telescope.builtin").find_files {
-        --         prompt_title = "WezTerm Config Files",
-        --         search_dirs = search_dirs,
-        --         cwd = wezterm_config_dir,
-        --         follow = true,
-        --       }
-        --     end
-        --   end,
-        --   desc = "WezTerm Config",
-        -- },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bD"] = {
@@ -173,50 +89,6 @@ return {
         ["<Leader>b"] = { desc = "Buffers" },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-
-        -- Copilot
-        ["<Leader>zc"] = {
-          "<cmd>CopilotChat<CR>",
-          desc = "Open Copilot Chat",
-        },
-        ["<Leader>zp"] = {
-          "<cmd>lua ShowCopilotChatActionPrompt()<CR>",
-          desc = "Show Copilot Chat Action Prompt",
-        },
-        ["<Leader>za"] = {
-          "<cmd>lua CopilotChatBuffer()<CR>",
-          desc = "Open Copilot Chat",
-        },
-        ["<Leader>fn"] = {
-          "<cmd>Telescope noice<CR>",
-          desc = "Find Notification",
-        },
-
-        --LaTeX
-        ["<Leader>L"] = { group = "LaTeX" },
-        ["<Leader>Lc"] = { "<cmd>VimtexClean<CR>", desc = "Clean" },
-        ["<Leader>Le"] = { "<cmd>VimtexErrors<CR>", desc = "Show Errors" },
-        ["<Leader>Lg"] = { "<cmd>VimtexStatus<CR>", desc = "Show Status" },
-        ["<Leader>Li"] = { "<cmd>VimtexInfo<CR>", desc = "Show Info" },
-        ["<Leader>Lk"] = { "<cmd>VimtexStop<CR>", desc = "Stop Vimtex" },
-        ["<Leader>LK"] = { "<cmd>VimtexStopAll<CR>", desc = "Stop All Vimtex" },
-        ["<Leader>LL"] = { "<cmd>VimtexCompileSS<CR>", desc = "Compile Section" },
-        ["<Leader>Ll"] = { "<cmd>VimtexCompile<CR>", desc = "Compile" },
-        ["<Leader>Lm"] = { "<cmd>VimtexImapsList<CR>", desc = "Show Imaps" },
-        ["<Leader>Lo"] = { "<cmd>VimtexCompileOutput<CR>", desc = "Show Compiler Output" },
-        ["<Leader>Lq"] = { "<cmd>VimtexLog<CR>", desc = "Show VimTeX Log" },
-        ["<Leader>Ls"] = { "<cmd>VimtexToggleMain<CR>", desc = "Toggle Main" },
-        ["<Leader>Lv"] = { "<cmd>VimtexView<CR>", desc = "View Compiled Document" },
-        ["<Leader>LX"] = { "<cmd>VimtexReloadState<CR>", desc = "Reload VimTeX State" },
-        ["<Leader>Lx"] = { "<cmd>VimtexReload<CR>", desc = "Reload VimTeX" },
-
-        -- Obsidian
-        ["<Leader>O"] = { desc = "Obsidian" },
-        ["<Leader>Of"] = { "<cmd>ObsidianSearch<CR>", desc = "Find Obsidian Note" },
-        ["<Leader>Ot"] = { "<cmd>ObsidianTag<CR>", desc = "Find Obsidian Tag" },
-        ["<Leader>OT"] = { "<cmd>ObsidianTemplate<CR>", desc = "Insert Obsidian Template" },
-        ["<Leader>Od"] = { "<cmd>ObsidianToday<CR>", desc = "Open Daily Note" },
-        ["<Leader>Os"] = { "<cmd>ObsidianQuickSwitch<CR>", desc = "Open Daily Note" },
       },
       t = {
         -- setting a mapping to false will disable it

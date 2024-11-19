@@ -75,4 +75,26 @@ return {
       }
     end,
   },
+  {
+    "AstroNvim/astrocore",
+    ---@type AstroCoreOpts
+    opts = {
+      mappings = {
+        n = {
+          ["<Leader>zc"] = {
+            "<cmd>CopilotChat<CR>",
+            desc = "Open Copilot Chat",
+          },
+          ["<Leader>zp"] = {
+            "<cmd>lua ShowCopilotChatActionPrompt()<CR>",
+            desc = "Show Copilot Chat Action Prompt",
+          },
+          ["<Leader>za"] = {
+            "<cmd>lua CopilotChatBuffer()<CR>",
+            desc = "Open Copilot Chat",
+          },
+        },
+      },
+    },
+  },
 }

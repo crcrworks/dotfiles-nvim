@@ -95,9 +95,6 @@ return {
   "AstroNvim/astroui",
   ---@type AstroUIOpts
   opts = {
-    style = {
-      border = false,
-    },
     status = {
       colors = {
         bg = "#2D353B",
@@ -125,23 +122,30 @@ return {
         -- return a table of highlights for telescope based on
         -- colors gotten from highlight groups
         return {
-          TelescopeBorder = { fg = theme.bg0, bg = bg },
+
+          TelescopeBorder = { fg = theme.bg0, bg = theme.bg1 },
           TelescopeNormal = { bg = bg },
-          TelescopePreviewBorder = { fg = bg, bg = bg },
-          TelescopePreviewNormal = { bg = bg },
+          TelescopePreviewBorder = { fg = theme.bg1, bg = theme.bg1 },
+          TelescopePreviewNormal = { bg = theme.bg1 },
           TelescopePreviewTitle = { fg = bg, bg = theme.green },
-          TelescopePromptBorder = { fg = theme.bg0, bg = theme.bg0 },
-          TelescopePromptNormal = { fg = fg, bg = theme.bg0 },
-          TelescopePromptPrefix = { fg = theme.purple, bg = theme.bg0 },
+          TelescopePromptBorder = { fg = theme.bg1, bg = theme.bg1 },
+          TelescopePromptNormal = { fg = fg, bg = theme.bg1 },
+          TelescopePromptPrefix = { fg = theme.purple, bg = theme.bg1 },
           TelescopePromptTitle = { fg = bg, bg = theme.purple },
-          TelescopeResultsBorder = { fg = bg, bg = bg },
-          TelescopeResultsNormal = { bg = bg },
-          TelescopeResultsTitle = { fg = bg, bg = bg },
-          WinBar = { fg = "#9DA9A0", bg = bg },
-          NeoTreeNormal = { fg = "#D3C6AA", bg = bg },
-          NeoTreeTabInactive = { fg = "#D3C6AA", bg = "#232A2E" },
-          NeoTreeEndOfBuffer = { fg = "#D3C6AA", bg = bg },
-          NeoTreeTabSeparatorInactive = { fg = "#232A2E", bg = "#232A2E" },
+          TelescopeResultsBorder = { fg = theme.bg3, bg = theme.bg1 },
+          TelescopeResultsNormal = { bg = theme.bg1 },
+          TelescopeResultsTitle = { fg = theme.gray0, bg = theme.bg1 },
+          TelescopeSelection = { bg = theme.bg2 },
+
+          WinBar = { fg = theme.gray1, bg = bg },
+
+          NeoTreeNormal = { fg = theme.fg, bg = bg },
+          NeoTreeTabInactive = { fg = theme.gray1, bg = theme.bg_dim },
+          NeoTreeEndOfBuffer = { fg = theme.fg, bg = bg },
+          NeoTreeTabSeparatorInactive = { fg = theme.bg_dim, bg = theme.bg_dim },
+
+          FloatBorder = { fg = theme.bg2, bg = theme.bg1 },
+          NormalFloat = { bg = theme.bg1 },
         }
       end,
     },

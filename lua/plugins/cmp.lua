@@ -3,7 +3,7 @@ return {
   opts = function(_, opts)
     local cmp = require "cmp"
     local border_opts = {
-      border = "none",
+      border = "single",
       winhighlight = "Normal:StatusLineNC,FloatBorder:FloatBorder,CursorLine:FloatShadow,Search:None",
     }
 
