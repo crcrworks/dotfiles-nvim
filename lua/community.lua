@@ -15,19 +15,24 @@ return {
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.svelte" },
 
-  { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
-  { import = "astrocommunity.motion.tabout-nvim" },
-  { import = "astrocommunity.recipes.telescope-nvchad-theme" },
   { import = "astrocommunity.keybinding.nvcheatsheet-nvim" },
 
   { import = "astrocommunity.recipes.vscode-icons" },
 
-  { import = "astrocommunity.media.cord-nvim" },
   { import = "astrocommunity.markdown-and-latex.vimtex" },
+  { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
 
   { import = "astrocommunity.completion.cmp-spell" },
   { import = "astrocommunity.completion.copilot-cmp" },
+
+  { import = "astrocommunity.recipes.telescope-nvchad-theme" },
   { import = "astrocommunity.recipes.heirline-clock-statusline" },
+
+  { import = "astrocommunity.motion.tabout-nvim" },
   { import = "astrocommunity.motion.nvim-surround" },
+
   { import = "astrocommunity.editing-support.vim-visual-multi" },
+  { import = "astrocommunity.editing-support.dial-nvim" },
+
+  { import = "astrocommunity.media.cord-nvim" },
 }
