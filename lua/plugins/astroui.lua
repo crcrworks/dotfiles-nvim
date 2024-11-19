@@ -1,8 +1,3 @@
--- AstroUI provides the basis for configuring the AstroNvim User Interface
--- Configuration documentation can be found with `:h astroui`
--- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
---       as this provides autocomplete and documentation while editing
-
 local hard = {
   bg_dim = "#1E2326",
   bg0 = "#272E33",
@@ -103,15 +98,10 @@ return {
         -- winbarnc_bg = "#2D353B",
       },
     },
-    -- change colorscheme
     colorscheme = "everforest",
 
-    -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
-      -- set highlights for all themes
-      -- use a function override to let us use lua to retrieve
-      -- colors from highlight group there is no default table
-      -- so we don't need to put a parameter for this function
+      -- この関数にパラメータは必要ない
       init = function()
         local theme = medium
 
@@ -119,8 +109,6 @@ return {
         -- get highlights from highlight groups
         local normal = get_hlgroup "Normal"
         local fg, bg = normal.fg, "#2D353B"
-        -- return a table of highlights for telescope based on
-        -- colors gotten from highlight groups
         return {
 
           TelescopeBorder = { fg = theme.bg0, bg = theme.bg1 },
@@ -149,9 +137,8 @@ return {
         }
       end,
     },
-    -- Icons can be configured throughout the interface
+
     icons = {
-      -- configure the loading of the lsp in the status line
       LSPLoading1 = "⠋",
       LSPLoading2 = "⠙",
       LSPLoading3 = "⠹",

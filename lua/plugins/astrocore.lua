@@ -1,7 +1,4 @@
--- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
--- Configuration documentation can be found with `:h astrocore`
--- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
---       as this provides autocomplete and documentation while editing
+-- :h astrocore でヘルプを確認
 
 vim.cmd [[
 xnoremap p "_dP
@@ -12,60 +9,55 @@ return {
   "AstroNvim/astrocore",
   ---@type AstroCoreOpts
   opts = {
-    -- Configure core features of AstroNvim
     features = {
-      large_buf = { size = 1024 * 500, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
-      autopairs = true, -- enable autopairs at start
-      cmp = true, -- enable completion at start
-      diagnostics_mode = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
-      highlighturl = true, -- highlight URLs at start
-      notifications = true, -- enable notifications at start
+      -- ファイルのサイズ制限を設定。TreeSitterなどに影響する。
+      large_buf = { size = 1024 * 500, lines = 10000 },
+      autopairs = true,
+      cmp = true,
+
+      -- 0: 全てオフ
+      -- 1: signsオフ
+      -- 2: virtual_textオフ
+      -- 3: 全てオン
+      diagnostics_mode = 3,
+
+      highlighturl = true,
+      notifications = true,
     },
-    -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
+
     diagnostics = {
       virtual_text = true,
       underline = true,
     },
-    -- vim options can be configured here
+
     options = {
-      opt = { -- vim.opt.<key>
-        relativenumber = false, -- sets vim.opt.relativenumber
-        number = true, -- sets vim.opt.number
-        spell = false, -- sets vim.opt.spell
-        signcolumn = "auto", -- sets vim.opt.signcolumn to auto
-        wrap = false, -- sets vim.opt.wrap
+      opt = {
+        relativenumber = false,
+        number = true,
+        spell = false,
+        signcolumn = "auto",
+        wrap = false,
         conceallevel = 2,
         numberwidth = 1,
       },
-      g = { -- vim.g.<key>
-
-        -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
-        -- This can be found in the `lua/lazy_setup.lua` file
+      g = {
+        -- NOTE: "mapleader"と"maplocalleader"は，AstroNvimのoptsで設定するか，
+        -- "lazy.setup"の前に設定する必要がある。
+        -- これは"lua/lazy_setup.lua"ファイルにある。
       },
     },
 
-    -- Mappings can be configured through AstroCore as well.
-    -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
+    -- NOTE: Keycodeは，vimdocsにあるシーケンスに従うこと。
+    -- 例えば，<Leader>は大文字にしなければいけない。
     mappings = {
       v = {},
-      -- first key is the mode
       n = {
 
         -- navigate buffer tabs with `H` and `L`
         -- L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         -- H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
-        -- -- window
-        -- ["<M-K>"] = { "<cmd>resize -2<CR>", desc = "Resize split up" },
-        -- ["<M-J>"] = { "<cmd>resize +2<CR>", desc = "Resize split down" },
-        -- ["<M-H>"] = { "<cmd>vertical resize -2<CR>", desc = "Resize split left" },
-        -- ["<M-L>"] = { "<cmd>vertical resize +2<CR>", desc = "Resize split right" },
-        --
-        -- multi cursor
-        -- ["<M-k>"] = { "<cmd>call vm#commands#add_cursor_up(0, v:count1)<cr>" },
-        -- ["<M-j>"] = { "<cmd>call vm#commands#add_cursor_down(0, v:count1)<cr>" },
-
-        -- Navigate Buffer
+        -- Tabでバッファー移動
         ["<Tab>"] = {
           function() require("astrocore.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
           desc = "Next buffer",
@@ -75,7 +67,7 @@ return {
           desc = "Previous buffer",
         },
 
-        -- mappings seen under group name "Buffer"
+        -- 選択してバッファーを閉じる
         ["<Leader>bD"] = {
           function()
             require("astroui.status.heirline").buffer_picker(
@@ -84,16 +76,9 @@ return {
           end,
           desc = "Pick to close",
         },
-        -- tables with just a `desc` key will be registered with which-key if it's installed
-        -- this is useful for naming menus
         ["<Leader>b"] = { desc = "Buffers" },
-        -- quick save
-        -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
       },
-      t = {
-        -- setting a mapping to false will disable it
-        -- ["<esc>"] = false,
-      },
+      t = {},
     },
     autocmds = {},
   },
