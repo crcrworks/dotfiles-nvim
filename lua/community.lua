@@ -32,4 +32,5 @@ return {
   { import = "astrocommunity.completion.cmp-spell" },
   { import = "astrocommunity.completion.copilot-cmp" },
   { import = "astrocommunity.recipes.heirline-clock-statusline" },
+  { import = "astrocommunity.motion.nvim-surround" },
 }
