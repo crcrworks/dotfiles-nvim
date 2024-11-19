@@ -33,6 +33,14 @@ return {
 
   { import = "astrocommunity.editing-support.vim-visual-multi" },
   { import = "astrocommunity.editing-support.dial-nvim" },
+  { import = "astrocommunity.editing-support.nvim-treesitter-context" },
+  { import = "astrocommunity.editing-support.comment-box-nvim" },
+  { import = "astrocommunity.editing-support.undotree" },
+  { import = "astrocommunity.editing-support.treesj" },
+  { import = "astrocommunity.editing-support.vim-move" },
+  { import = "astrocommunity.editing-support.wildfire-nvim" },
+
+  { import = "astrocommunity.game.leetcode-nvim" },
 
   { import = "astrocommunity.media.cord-nvim" },
 }
