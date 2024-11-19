@@ -133,6 +133,7 @@ return {
           NeoTreeTabSeparatorInactive = { fg = theme.bg_dim, bg = theme.bg_dim },
 
           FloatBorder = { fg = theme.bg2, bg = theme.bg1 },
+          NeotreeFloatBorder = { fg = theme.gray1, bg = theme.bg0 },
           NormalFloat = { bg = theme.bg1 },
         }
       end,
