@@ -111,19 +111,21 @@ return {
         local fg, bg = normal.fg, "#2D353B"
         return {
 
-          TelescopeBorder = { fg = theme.bg0, bg = theme.bg1 },
+          TelescopeBorder = { fg = theme.bg0, bg = theme.bg0 },
           TelescopeNormal = { bg = bg },
-          TelescopePreviewBorder = { fg = theme.bg1, bg = theme.bg1 },
-          TelescopePreviewNormal = { bg = theme.bg1 },
+          TelescopePreviewBorder = { fg = theme.bg3, bg = theme.bg0 },
+          TelescopePreviewNormal = { bg = theme.bg0 },
           TelescopePreviewTitle = { fg = bg, bg = theme.green },
-          TelescopePromptBorder = { fg = theme.bg1, bg = theme.bg1 },
-          TelescopePromptNormal = { fg = fg, bg = theme.bg1 },
-          TelescopePromptPrefix = { fg = theme.purple, bg = theme.bg1 },
+          TelescopePromptBorder = { fg = theme.bg3, bg = theme.bg0 },
+          TelescopePromptNormal = { fg = fg, bg = theme.bg0 },
+          TelescopePromptPrefix = { fg = theme.purple, bg = theme.bg0 },
           TelescopePromptTitle = { fg = bg, bg = theme.purple },
-          TelescopeResultsBorder = { fg = theme.bg3, bg = theme.bg1 },
-          TelescopeResultsNormal = { bg = theme.bg1 },
-          TelescopeResultsTitle = { fg = theme.gray0, bg = theme.bg1 },
-          TelescopeSelection = { bg = theme.bg3 },
+          TelescopeResultsBorder = { fg = theme.bg3, bg = theme.bg0 },
+          TelescopeResultsNormal = { bg = theme.bg0 },
+          TelescopeResultsTitle = { fg = theme.gray0, bg = theme.bg0 },
+          TelescopeSelection = { bg = theme.bg2 },
+
+          TreesitterContext = { fg = theme.gray1, bg = theme.bg1 },
 
           WinBar = { fg = theme.gray1, bg = bg },
 
