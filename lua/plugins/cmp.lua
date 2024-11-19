@@ -4,7 +4,7 @@ return {
     local cmp = require "cmp"
     local border_opts = {
       border = "single",
-      winhighlight = "Normal:StatusLineNC,FloatBorder:FloatBorder,CursorLine:FloatShadow,Search:None",
+      winhighlight = "Normal:StatusLineNC,FloatBorder:FloatBorder,CursorLine:TelescopeSelection,Search:None",
     }
 
     -- vim.opt.spell = true

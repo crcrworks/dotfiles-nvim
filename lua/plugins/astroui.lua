@@ -123,7 +123,7 @@ return {
           TelescopeResultsBorder = { fg = theme.bg3, bg = theme.bg1 },
           TelescopeResultsNormal = { bg = theme.bg1 },
           TelescopeResultsTitle = { fg = theme.gray0, bg = theme.bg1 },
-          TelescopeSelection = { bg = theme.bg2 },
+          TelescopeSelection = { bg = theme.bg3 },
 
           WinBar = { fg = theme.gray1, bg = bg },
 

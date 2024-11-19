@@ -1,35 +1,80 @@
 return {
-  "folke/noice.nvim",
-  event = "VeryLazy",
-  config = function()
-    require("noice").setup {
+  {
+
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+    },
+    opts = {
       lsp = {
-        signature = {
-          enabled = false,
-        },
-        hover = {
-          enabled = false,
+        override = {
+          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+          ["vim.lsp.util.stylize_markdown"] = true,
+          ["cmp.entry.get_documentation"] = true,
         },
       },
-    }
-  end,
-  opts = {
-    messages = {
-      view = "mini", -- default view for messages
-      view_error = "mini", -- view for errors
-      view_warn = "mini", -- view for warnings
-      view_search = "mini",
-    },
-    routes = {
-      view = "mini",
+
+      routes = {
+        {
+          filter = {
+            event = "msg_show",
+            any = {
+              { find = "%d+L, %d+B" },
+              { find = "; after #%d+" },
+              { find = "; before #%d+" },
+            },
+          },
+          view = "mini",
+        },
+      },
+
+      messages = {
+        view = "mini", -- default view for messages
+        view_error = "mini", -- view for errors
+        view_warn = "mini", -- view for warnings
+        view_search = "mini",
+      },
+      presets = {
+        bottom_search = true,
+        long_message_to_split = true,
+      },
     },
   },
-  dependencies = {
-    -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-    "MunifTanjim/nui.nvim",
-    -- OPTIONAL:
-    --   `nvim-notify` is only needed, if you want to use the notification view.
-    --   If not available, we use `mini` as the fallback
-    "rcarriga/nvim-notify",
+  {
+    "AstroNvim/astrocore",
+    ---@type AstroCoreOpts
+    opts = {
+      mappings = {
+        n = {
+          ["<Leader>sn"] = { desc = "noice" },
+          ["<Leader>snl"] = {
+            function() require("noice").cmd "last" end,
+            desc = "Noice Last Message",
+          },
+          ["<Leader>snh"] = {
+            function() require("noice").cmd "history" end,
+            desc = "Noice History",
+          },
+          ["<Leader>sna"] = {
+            function() require("noice").cmd "all" end,
+            desc = "Noice All",
+          },
+          ["<Leader>snd"] = {
+            function() require("noice").cmd "dismiss" end,
+            desc = "Dismiss All",
+          },
+          ["<Leader>snt"] = {
+            function() require("noice").cmd "pick" end,
+            desc = "Noice Picker (Telescope/FzfLua)",
+          },
+        },
+      },
+    },
   },
 }
