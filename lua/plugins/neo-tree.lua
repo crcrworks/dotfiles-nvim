@@ -1,24 +1,30 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
+  opts = {
+    window = {
+      width = 40,
+      mappings = {
+        ["<Tab>"] = "next_source",
+        ["<S-Tab>"] = "prev_source",
+      },
+    },
 
-  opts = function(_, opts)
-    opts.window.width = 40
-
-    local f = opts.filesystem.filtered_items
-
-    f.visible = false -- when true, they will just be displayed differently than normal items
-    f.hide_dotfiles = true
-    f.hide_gitignored = true
-    f.hide_hidden = true -- only works on Windows for hidden files/directories
-    f.hide_by_pattern = { -- uses glob style patterns
-      "*.meta",
-      "*.unity",
-      "*.fls",
-      "*.aux",
-      "*.dvi",
-      "*.pdf",
-      "*.gz",
-      "*.fdb_latexmk",
-    }
-  end,
+    filesystem = {
+      filtered_items = {
+        visible = false,
+        hide_dotfiles = true,
+        hide_hidden = true,
+        hide_by_pattern = {
+          "*.meta",
+          "*.unity",
+          "*.fls",
+          "*.aux",
+          "*.dvi",
+          "*.pdf",
+          "*.gz",
+          "*.fdb_latexmk",
+        },
+      },
+    },
+  },
 }
