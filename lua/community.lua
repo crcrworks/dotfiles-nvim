@@ -43,4 +43,6 @@ return {
   { import = "astrocommunity.game.leetcode-nvim" },
 
   { import = "astrocommunity.media.cord-nvim" },
+
+  { import = "astrocommunity.note-taking.neorg" },
 }
