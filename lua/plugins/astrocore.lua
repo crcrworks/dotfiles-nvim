@@ -2,8 +2,8 @@
 
 vim.cmd [[
 xnoremap p "_dP
-xnoremap <C-c> <Esc>`^
-inoremap <C-c> <Esc>`^
+xnoremap <C-c> <Esc>
+inoremap <C-c> <Esc>
 ]]
 
 ---@type LazySpec
