@@ -9,7 +9,7 @@ return {
     -- normal_bg = "#282828",
 
     -- Smear cursor when switching buffers
-    smear_between_buffers = false,
+    smear_between_buffers = true,
 
     -- Smear cursor when moving within line or to neighbor lines
     smear_between_neighbor_lines = true,
