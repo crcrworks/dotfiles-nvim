@@ -1,9 +1,12 @@
 -- :h astrocore でヘルプを確認
 
 vim.cmd [[
-xnoremap p "_dP
-xnoremap <C-c> <Esc>
-inoremap <C-c> <Esc>
+  xnoremap p "_dP
+  nnoremap <C-c> <Esc>
+  inoremap <C-c> <Esc>
+  vnoremap <C-c> <Esc>
+  cnoremap <C-c> <Esc>
+  tnoremap <C-c> <Esc>
 ]]
 
 ---@type LazySpec
@@ -43,6 +46,7 @@ return {
         numberwidth = 1,
       },
       g = {
+
         -- NOTE: "mapleader"と"maplocalleader"は，AstroNvimのoptsで設定するか，
         -- "lazy.setup"の前に設定する必要がある。
         -- これは"lua/lazy_setup.lua"ファイルにある。
