@@ -6,7 +6,6 @@ vim.cmd [[
   inoremap <C-c> <Esc>
   vnoremap <C-c> <Esc>
   cnoremap <C-c> <Esc>
-  tnoremap <C-c> <Esc>
 ]]
 
 ---@type LazySpec
