@@ -45,4 +45,8 @@ return {
   { import = "astrocommunity.media.cord-nvim" },
 
   { import = "astrocommunity.note-taking.neorg" },
+
+  { import = "astrocommunity.split-and-window.mini-map" },
+
+  { import = "astrocommunity.git.neogit" },
 }
