@@ -22,8 +22,8 @@ return {
   { import = "astrocommunity.markdown-and-latex.vimtex" },
   { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
 
-  { import = "astrocommunity.completion.cmp-spell" },
-  { import = "astrocommunity.completion.copilot-cmp" },
+  -- { import = "astrocommunity.completion.cmp-spell" },
+  -- { import = "astrocommunity.completion.copilot-cmp" },
 
   { import = "astrocommunity.recipes.telescope-nvchad-theme" },
   { import = "astrocommunity.recipes.heirline-clock-statusline" },
