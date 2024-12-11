@@ -40,7 +40,7 @@ return {
         number = true,
         spell = false,
         signcolumn = "auto",
-        wrap = false,
+        wrap = true,
         conceallevel = 2,
         numberwidth = 1,
       },
