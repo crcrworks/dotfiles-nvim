@@ -1,4 +1,5 @@
 function CopilotChatBuffer()
+  chat_autocomplete = true
   local input = vim.fn.input "Quick Chat: "
   if input ~= "" then require("CopilotChat").ask(input) end
 end
@@ -12,13 +13,18 @@ return {
   {
     "CopilotC-Nvim/CopilotChat.nvim",
     event = "BufRead",
-    branch = "canary",
+    branch = "main",
     dependencies = {
       { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
       { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
     },
+    opts = {
+      config = {
+        chat_autocomplete = true,
+      },
+    },
     config = function()
-      require("CopilotChat.integrations.cmp").setup()
+      -- require("CopilotChat.integrations.cmp").setup()
 
       local select = require "CopilotChat.select"
       require("CopilotChat").setup {

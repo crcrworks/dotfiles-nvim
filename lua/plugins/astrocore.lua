@@ -2,10 +2,10 @@
 
 vim.cmd [[
   xnoremap p "_dP
-  nnoremap <C-c> <Esc>
-  inoremap <C-c> <Esc>
-  vnoremap <C-c> <Esc>
-  cnoremap <C-c> <Esc>
+  " nnoremap <C-c> <Esc>
+  " inoremap <C-c> <Esc>
+  " vnoremap <C-c> <Esc>
+  " cnoremap <C-c> <Esc>
 ]]
 
 ---@type LazySpec
@@ -49,6 +49,7 @@ return {
         -- NOTE: "mapleader"と"maplocalleader"は，AstroNvimのoptsで設定するか，
         -- "lazy.setup"の前に設定する必要がある。
         -- これは"lua/lazy_setup.lua"ファイルにある。
+        ["denops#deno"] = "/opt/homebrew/bin/deno",
       },
     },
 
@@ -58,7 +59,7 @@ return {
       v = {},
       n = {
 
-        -- navigate buffer tabs with `H` and `L`
+        -- navigate buffer tabs with `H` and `L`https://zenn.dev/yukiko_bass/articles/e6f9f22da5f15e
         -- L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         -- H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
