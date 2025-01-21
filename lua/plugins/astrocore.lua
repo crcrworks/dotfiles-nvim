@@ -50,6 +50,12 @@ return {
         -- "lazy.setup"の前に設定する必要がある。
         -- これは"lua/lazy_setup.lua"ファイルにある。
         ["denops#deno"] = "/opt/homebrew/bin/deno",
+        vimtex_compiler_latexmk = {
+          background = 0,
+          build_dir = "",
+          continuous = 1,
+          options = { "-pdfdvi", "-verbose", "-file-line-error", "-synctex=1", "-interaction=nonstopmode" },
+        },
       },
     },
 
