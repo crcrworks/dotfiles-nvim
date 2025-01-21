@@ -17,24 +17,24 @@ return {
 
     opts.sources = cmp.config.sources {
       -- { name = "copilot", group_index = 2, priority = 1 },
-      { name = "nvim_lsp", option = { show_autosnippets = true }, group_index = 1, priority = 2 },
-      { name = "luasnip", group_index = 1, priority = 2 },
-      { name = "nerdfont", group_index = 1, priority = 2 },
-      { name = "buffer", group_index = 1, priority = 2 },
-      { name = "path", group_index = 1, priority = 2 },
-      { name = "treesitter", group_index = 1, priority = 2 },
-      { name = "crates", group_index = 1, priority = 1 },
-      { name = "skkeleton", group_index = 1, priority = 1 },
-      {
-        name = "spell",
-        group_index = 1,
-        priority = 1,
-        option = {
-          keep_all_entries = false,
-          enable_in_context = function() return true end,
-          preselect_correct_word = true,
-        },
-      },
+      { name = "nvim_lsp", option = { show_autosnippets = true }, group_index = 1, priority = 100 },
+      { name = "crates", group_index = 1, priority = 100 },
+      -- { name = "skkeleton", group_index = 1, priority = 1 },
+      { name = "luasnip", group_index = 1, priority = 99 },
+      { name = "path", group_index = 1, priority = 99 },
+      { name = "treesitter", group_index = 2, priority = 88 },
+      { name = "nerdfont", group_index = 2, priority = 88 },
+      { name = "buffer", group_index = 2, priority = 88 },
+      -- {
+      --   name = "spell",
+      --   group_index = 1,
+      --   priority = 1,
+      --   option = {
+      --     keep_all_entries = false,
+      --     enable_in_context = function() return true end,
+      --     preselect_correct_word = true,
+      --   },
+      -- },
     }
   end,
 }
