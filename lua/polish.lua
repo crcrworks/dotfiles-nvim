@@ -2,6 +2,14 @@
 -- カスタムファイルタイプなどを設定するのに適した場所。
 -- これらは純粋なluaなので，通常の設定場所に治らないものは全てここに置くことができる。
 
+vim.cmd [[
+  xnoremap p "_dP
+  " nnoremap <C-c> <Esc>
+  " inoremap <C-c> <Esc>
+  " vnoremap <C-c> <Esc>
+  " cnoremap <C-c> <Esc>
+]]
+
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = "*.sk",
   callback = function() vim.bo.filetype = "skript" end,

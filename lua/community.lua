@@ -21,9 +21,11 @@ return {
 
   { import = "astrocommunity.markdown-and-latex.vimtex" },
   { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
+  { import = "astrocommunity.markdown-and-latex.markview-nvim" },
 
   -- { import = "astrocommunity.completion.cmp-spell" },
   -- { import = "astrocommunity.completion.copilot-cmp" },
+  { import = "astrocommunity.completion.avante-nvim" },
 
   { import = "astrocommunity.recipes.telescope-nvchad-theme" },
   { import = "astrocommunity.recipes.heirline-clock-statusline" },
@@ -39,10 +41,14 @@ return {
   { import = "astrocommunity.editing-support.treesj" },
   { import = "astrocommunity.editing-support.vim-move" },
   { import = "astrocommunity.editing-support.wildfire-nvim" },
+  { import = "astrocommunity.editing-support.neogen" },
+
+  { import = "astrocommunity.terminal-integration.flatten-nvim" },
 
   { import = "astrocommunity.game.leetcode-nvim" },
 
   { import = "astrocommunity.media.cord-nvim" },
+  { import = "astrocommunity.media.img-clip-nvim" },
 
   -- { import = "astrocommunity.note-taking.neorg" },
 

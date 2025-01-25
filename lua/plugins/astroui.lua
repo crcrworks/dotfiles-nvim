@@ -106,6 +106,7 @@ return {
         local theme = medium
 
         local get_hlgroup = require("astroui").get_hlgroup
+
         -- get highlights from highlight groups
         local normal = get_hlgroup "Normal"
         local fg, bg = normal.fg, "#2D353B"

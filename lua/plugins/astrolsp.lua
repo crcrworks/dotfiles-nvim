@@ -1,3 +1,5 @@
+local util = require "lspconfig.util"
+
 ---@type LazySpec
 return {
   "AstroNvim/astrolsp",
@@ -34,6 +36,7 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       rust_analyzer = {
+
         settings = {
           ["rust-analyzer"] = {
             cargo = {
