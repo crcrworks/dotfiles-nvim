@@ -1,12 +1,15 @@
 return {
   "yetone/avante.nvim",
+  dependencies = {
+    { "zbirenbaum/copilot.lua", cmd = "Copilot", config = function() require("copilot").setup {} end },
+  },
   opts = {
     -- provider = "openai",
     -- provider = "claude",
-    provider = "gemini",
+    provider = "copilot",
     auto_suggestions_provider = "copilot",
     behaviour = {
-      auto_suggestions = false,
+      auto_suggestions = true,
       auto_set_highlight_group = true,
       auto_set_keymaps = true,
       auto_apply_diff_after_generation = true,
@@ -16,6 +19,15 @@ return {
     windows = {
       position = "right",
       width = 30,
+    },
+    mappings = {
+      suggestion = {
+        accept = "<C-g>",
+      },
+    },
+    suggestion = {
+      debounce = 100,
+      throttle = 100,
     },
     claude = {
       model = "claude-3-5-sonnet-20240620", -- $3/$15, maxtokens=8000
