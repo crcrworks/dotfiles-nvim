@@ -111,6 +111,15 @@ return {
         local normal = get_hlgroup "Normal"
         local fg, bg = normal.fg, "#2D353B"
         return {
+          AvanteTitle = { fg = bg, bg = theme.green },
+          AvanteSubtitle = { fg = bg, bg = theme.blue },
+          AvanteToBeDeleted = { fg = bg, bg = theme.purple },
+          AvanteConflictAncestor = { bg = theme.bg2 },
+          AvanteConflictCurrent = { bg = theme.bg2 },
+          AvanteConflictIncoming = { bg = theme.bg2 },
+          AvanteConflictAncestorLabel = { fg = theme.gray1 },
+          AvanteConflictCurrentLabel = { fg = theme.gray1 },
+          AvanteConflictIncomingLabel = { fg = theme.gray1 },
 
           TelescopeBorder = { fg = theme.bg0, bg = theme.bg0 },
           TelescopeNormal = { bg = bg },
