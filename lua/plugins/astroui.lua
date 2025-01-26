@@ -113,7 +113,7 @@ return {
         return {
           AvanteTitle = { fg = bg, bg = theme.green },
           AvanteSubtitle = { fg = bg, bg = theme.blue },
-          AvanteToBeDeleted = { fg = bg, bg = theme.purple },
+          AvanteToBeDeleted = { fg = theme.bg5 },
           AvanteConflictAncestor = { bg = theme.bg2 },
           AvanteConflictCurrent = { bg = theme.bg2 },
           AvanteConflictIncoming = { bg = theme.bg2 },
