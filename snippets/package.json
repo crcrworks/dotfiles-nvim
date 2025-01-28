@@ -1,5 +1,5 @@
 {
-  "name": "user_snippets",
+  "name": "snippets",
   "engines": {
     "vscode": "^1.11.0"
   },
@@ -8,6 +8,10 @@
       {
         "language": "typescriptreact",
         "path": "./typescriptreact.json"
+      },
+      {
+        "language": "tex",
+        "path": "./tex.json"
       }
     ]
   }
