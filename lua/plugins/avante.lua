@@ -1,7 +1,11 @@
 return {
   "yetone/avante.nvim",
   dependencies = {
-    { "zbirenbaum/copilot.lua", cmd = "Copilot", config = function() require("copilot").setup {} end },
+    {
+      "zbirenbaum/copilot.lua",
+      cmd = "Copilot",
+      config = function() require("copilot").setup {} end,
+    },
   },
   opts = {
     -- provider = "openai",
@@ -19,6 +23,9 @@ return {
     windows = {
       position = "right",
       width = 30,
+      sidebar_header = {
+        enabled = false, -- true, false to enable/disable the header
+      },
     },
     mappings = {
       suggestion = {
