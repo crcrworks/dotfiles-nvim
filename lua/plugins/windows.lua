@@ -9,7 +9,7 @@ return {
         enable = false,
       },
       ignore = {
-        filetype = { "Avante", "AvanteInput", "AvanteSelectedFiles" },
+        filetype = { "Avante", "AvanteInput", "AvanteSelectedFiles", "aerial" },
       },
     }
   end,
