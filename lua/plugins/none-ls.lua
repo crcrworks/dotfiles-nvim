@@ -14,6 +14,9 @@ return {
       -- Set a formatter
       null_ls.builtins.formatting.stylua,
       null_ls.builtins.formatting.biome,
+      null_ls.builtins.diagnostics.sqlfluff.with {
+        extra_args = { "--dialect", "mysql" },
+      },
     }
     return config -- return final config table
   end,
