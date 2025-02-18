@@ -35,13 +35,24 @@ return {
     -- lspconfigの設定
     ---@diagnostic disable: missing-fields
     config = {
+      yamlls = {
+        settings = {
+          yaml = {
+            schemas = {
+              ["https://json.schemastore.org/taskfile.json"] = "Taskfile.*.yml",
+            },
+          },
+        },
+      },
       rust_analyzer = {
-
         settings = {
           ["rust-analyzer"] = {
             cargo = {
               extraEnv = { CARGO_PROFILE_RUST_ANALYZER_INHERITS = "dev" },
               extraArgs = { "--profile", "rust-analyzer" },
+            },
+            check = {
+              command = "clippy",
             },
           },
         },
