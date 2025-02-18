@@ -3,17 +3,19 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
   -- { import = "astrocommunity.pack.typescript-all-in-one" },
-  { import = "astrocommunity.pack.typescript" },
+  -- { import = "astrocommunity.pack.typescript" },
+  -- { import = "astrocommunity.pack.astro" },
+  -- { import = "astrocommunity.pack.markdown" },
+  -- { import = "astrocommunity.pack.svelte" },
+  -- { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.json" },
-  { import = "astrocommunity.pack.yaml" },
-  { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.cs" },
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.cpp" },
-  { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.python" },
-  { import = "astrocommunity.pack.svelte" },
+  { import = "astrocommunity.pack.fish" },
+  { import = "astrocommunity.pack.sql" },
 
   { import = "astrocommunity.keybinding.nvcheatsheet-nvim" },
 
@@ -21,7 +23,7 @@ return {
 
   { import = "astrocommunity.markdown-and-latex.vimtex" },
   { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
-  { import = "astrocommunity.markdown-and-latex.markview-nvim" },
+  -- { import = "astrocommunity.markdown-and-latex.markview-nvim" },
 
   -- { import = "astrocommunity.completion.cmp-spell" },
   -- { import = "astrocommunity.completion.copilot-cmp" },
