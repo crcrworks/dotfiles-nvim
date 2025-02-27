@@ -1,7 +1,16 @@
 return {
   "sainnhe/everforest",
-  config = function()
-    vim.g.everforest_background = "medium"
-    vim.g.everforest_enable_italic = 1
-  end,
+  dependencies = {
+    "AstroNvim/astrocore",
+    ---@type AstroCoreOpts
+    opts = {
+      options = {
+        g = {
+          everforest_background = "medium",
+          everforest_enable_italic = 1,
+          everforest_lightline_disable_bold = 0,
+        },
+      },
+    },
+  },
 }
