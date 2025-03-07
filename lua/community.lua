@@ -16,6 +16,7 @@ return {
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.fish" },
   { import = "astrocommunity.pack.sql" },
+  { import = "astrocommunity.pack.typst" },
 
   { import = "astrocommunity.keybinding.nvcheatsheet-nvim" },
 

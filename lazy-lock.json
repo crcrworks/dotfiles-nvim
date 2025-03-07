@@ -104,6 +104,8 @@
   "todo-comments.nvim": { "branch": "main", "commit": "ae0a2afb47cf7395dc400e5dc4e05274bf4fb9e0" },
   "toggleterm.nvim": { "branch": "main", "commit": "50ea089fc548917cc3cc16b46a8211833b9e3c7c" },
   "treesj": { "branch": "main", "commit": "48c1a7539f376fd40ceb9cf12d697040fcf90649" },
+  "typst-preview.nvim": { "branch": "master", "commit": "df393b47c5bc35abe4d60bb479afd0c15802fda8" },
+  "typst.vim": { "branch": "main", "commit": "8ce752f1ba1277046429cb469c17ff2e1abc718f" },
   "undotree": { "branch": "master", "commit": "2556c6800b210b2096b55b66e74b4cc1d9ebbe4f" },
   "venv-selector.nvim": { "branch": "regexp", "commit": "e82594274bf7b54387f9a2abe65f74909ac66e97" },
   "vim-flog": { "branch": "master", "commit": "5bd9c58c5cd142277754b11dee805799ed2528b1" },
