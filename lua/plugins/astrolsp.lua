@@ -28,9 +28,7 @@ return {
       -- end
     },
 
-    servers = {
-      -- "pyright"
-    },
+    servers = {},
 
     -- lspconfigの設定
     ---@diagnostic disable: missing-fields
