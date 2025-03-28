@@ -18,6 +18,12 @@ return {
 			"willothy/flatten.nvim",
 		},
 		lazy = false,
+		opts = {
+			-- Auto trigger diffview after Aider's file changes
+			-- after_update_hook = function()
+			-- 	require("diffview").open({ "HEAD^" })
+			-- end,
+		},
 		keys = {
 			{
 				"<leader>as",
