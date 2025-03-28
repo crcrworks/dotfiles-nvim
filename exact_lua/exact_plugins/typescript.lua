@@ -29,8 +29,8 @@ return {
 	event = "User AstroFile",
 	cmd = "ConformInfo",
 	specs = {
-		{ "AstroNvim/astrolsp", optional = true, opts = { formatting = { disabled = true } } },
-		{ "jay-babu/mason-null-ls.nvim", optional = true, opts = { methods = { formatting = false } } },
+		-- { "AstroNvim/astrolsp", optional = true, opts = { formatting = { disabled = true } } },
+		-- { "jay-babu/mason-null-ls.nvim", optional = true, opts = { methods = { formatting = false } } },
 	},
 	dependencies = {
 		{ "williamboman/mason.nvim", optional = true },
@@ -97,18 +97,18 @@ return {
 		},
 	},
 	opts = {
-		format_on_save = function(bufnr)
-			if vim.g.autoformat == nil then
-				vim.g.autoformat = true
-			end
-			local autoformat = vim.b[bufnr].autoformat
-			if autoformat == nil then
-				autoformat = vim.g.autoformat
-			end
-			if autoformat then
-				return { timeout_ms = 5000, lsp_format = "fallback" }
-			end
-		end,
+		-- format_on_save = function(bufnr)
+		-- 	if vim.g.autoformat == nil then
+		-- 		vim.g.autoformat = true
+		-- 	end
+		-- 	local autoformat = vim.b[bufnr].autoformat
+		-- 	if autoformat == nil then
+		-- 		autoformat = vim.g.autoformat
+		-- 	end
+		-- 	if autoformat then
+		-- 		return { timeout_ms = 5000, lsp_format = "fallback" }
+		-- 	end
+		-- end,
 
 		formatters_by_ft = {
 			typescript = biome_lsp_or_prettier,
