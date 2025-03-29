@@ -7,7 +7,7 @@ return {
 			chunk = {
 				enable = true,
 				notify = true,
-				use_treesitter = true,
+				use_treesitter = false,
 				-- details about support_filetypes and exclude_filetypes in https://github.com/shellRaining/hlchunk.nvim/blob/main/lua/hlchunk/utils/filetype.lua
 				chars = {
 					horizontal_line = "─",
@@ -29,7 +29,7 @@ return {
 
 			indent = {
 				enable = true,
-				use_treesitter = true,
+				use_treesitter = false,
 				chars = {
 					"│",
 				},
