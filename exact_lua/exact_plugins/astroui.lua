@@ -4,32 +4,32 @@
 --       as this provides autocomplete and documentation while editing
 
 local hard = {
-  bg_dim = "#1E2326",
-  bg0 = "#272E33",
-  bg1 = "#2E383C",
-  bg2 = "#374145",
-  bg3 = "#414B50",
-  bg4 = "#495156",
-  bg5 = "#4F5B58",
-  bg_red = "#4C3743",
-  bg_visual = "#493B40",
-  bg_yellow = "#45443C",
-  bg_green = "#3C4841",
-  bg_blue = "#384B55",
-  red = "#E67E80",
-  orange = "#E69875",
-  yellow = "#DBBC7F",
-  green = "#A7C080",
-  blue = "#7FBBB3",
-  aqua = "#83C092",
-  purple = "#D699B6",
-  fg = "#D3C6AA",
-  statusline1 = "#A7C080",
-  statusline2 = "#D3C6AA",
-  statusline3 = "#E67E80",
-  gray0 = "#7A8478",
-  gray1 = "#859289",
-  gray2 = "#9DA9A0",
+	bg_dim = "#1E2326",
+	bg0 = "#272E33",
+	bg1 = "#2E383C",
+	bg2 = "#374145",
+	bg3 = "#414B50",
+	bg4 = "#495156",
+	bg5 = "#4F5B58",
+	bg_red = "#4C3743",
+	bg_visual = "#493B40",
+	bg_yellow = "#45443C",
+	bg_green = "#3C4841",
+	bg_blue = "#384B55",
+	red = "#E67E80",
+	orange = "#E69875",
+	yellow = "#DBBC7F",
+	green = "#A7C080",
+	blue = "#7FBBB3",
+	aqua = "#83C092",
+	purple = "#D699B6",
+	fg = "#D3C6AA",
+	statusline1 = "#A7C080",
+	statusline2 = "#D3C6AA",
+	statusline3 = "#E67E80",
+	gray0 = "#7A8478",
+	gray1 = "#859289",
+	gray2 = "#9DA9A0",
 }
 
 -- local medium = {
@@ -92,82 +92,85 @@ local hard = {
 
 ---@type LazySpec
 return {
-  "AstroNvim/astroui",
-  ---@type AstroUIOpts
-  opts = {
-    -- change colorscheme
-    colorscheme = "everforest",
-    -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
-    highlights = {
-      -- この関数にパラメータは必要ない
-      init = function()
-        local theme = hard
+	"AstroNvim/astroui",
+	---@type AstroUIOpts
+	opts = {
+		-- change colorscheme
+		colorscheme = "everforest",
+		-- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
+		highlights = {
+			-- この関数にパラメータは必要ない
+			init = function()
+				local theme = hard
 
-        local get_hlgroup = require("astroui").get_hlgroup
+				local get_hlgroup = require("astroui").get_hlgroup
 
-        -- get highlights from highlight groups
-        local normal = get_hlgroup "Normal"
-        local fg, bg = normal.fg, "#2D353B"
-        return {
+				-- get highlights from highlight groups
+				local normal = get_hlgroup("Normal")
+				local fg, bg = normal.fg, "#2D353B"
+				return {
 
-          StatusLine = { bg = theme.bg0 },
+					StatusLine = { bg = theme.bg0 },
 
-          AvanteTitle = { fg = bg, bg = theme.green },
-          AvanteSubtitle = { fg = bg, bg = theme.blue },
-          AvanteToBeDeleted = { fg = theme.bg5 },
-          AvanteConflictAncestor = { bg = theme.bg2 },
-          AvanteConflictCurrent = { bg = theme.bg2 },
-          AvanteConflictIncoming = { bg = theme.bg2 },
-          AvanteConflictAncestorLabel = { fg = theme.gray1 },
-          AvanteConflictCurrentLabel = { fg = theme.gray1 },
-          AvanteConflictIncomingLabel = { fg = theme.gray1 },
+					AvanteTitle = { fg = bg, bg = theme.green },
+					AvanteSubtitle = { fg = bg, bg = theme.blue },
+					AvanteToBeDeleted = { fg = theme.bg5 },
+					AvanteConflictAncestor = { bg = theme.bg2 },
+					AvanteConflictCurrent = { bg = theme.bg2 },
+					AvanteConflictIncoming = { bg = theme.bg2 },
+					AvanteConflictAncestorLabel = { fg = theme.gray1 },
+					AvanteConflictCurrentLabel = { fg = theme.gray1 },
+					AvanteConflictIncomingLabel = { fg = theme.gray1 },
+					AvanteSidebarWinHorizontalSeparator = { fg = theme.bg3, bg = theme.bg0 },
+					AvanteSidebarWinSeparator = { fg = theme.bg2, bg = theme.bg0 },
+					AvanteSidebarNormal = { bg = theme.bg0 },
 
-          SnacksPickerBorder = { fg = theme.bg0, bg = theme.bg0 },
-          SnacksPickerNormal = { bg = bg },
-          SnacksPickerCursorLine = { bg = theme.bg_blue },
-          SnacksPickerListCursorLine = { fg = theme.bg0, bg = theme.green },
+					SnacksPickerBorder = { fg = theme.bg0, bg = theme.bg0 },
+					SnacksPickerNormal = { bg = bg },
+					SnacksPickerCursorLine = { bg = theme.bg_blue },
+					SnacksPickerListCursorLine = { fg = theme.bg0, bg = theme.green },
 
-          SnacksPickerPreviewBorder = { fg = theme.bg3, bg = theme.bg0 },
-          SnacksPickerPreviewNormal = { bg = theme.bg0 },
-          SnacksPickerPreviewTitle = { fg = bg, bg = theme.green },
-          SnacksPickerPromptBorder = { fg = theme.bg3, bg = theme.bg0 },
-          SnacksPickerPromptNormal = { fg = fg, bg = theme.bg0 },
-          SnacksPickerPromptPrefix = { fg = theme.purple, bg = theme.bg0 },
-          SnacksPickerPromptTitle = { fg = bg, bg = theme.purple },
-          SnacksPickerResultsBorder = { fg = theme.bg3, bg = theme.bg0 },
-          SnacksPickerResultsNormal = { bg = theme.bg0 },
-          SnacksPickerResultsTitle = { fg = theme.gray0, bg = theme.bg0 },
-          SnacksPickerSelection = { bg = theme.bg2 },
-          SnacksPickerContext = { fg = theme.gray1, bg = theme.bg1 },
+					SnacksPickerPreviewBorder = { fg = theme.bg3, bg = theme.bg0 },
+					SnacksPickerPreviewNormal = { bg = theme.bg0 },
+					SnacksPickerPreviewTitle = { fg = bg, bg = theme.green },
+					SnacksPickerPromptBorder = { fg = theme.bg3, bg = theme.bg0 },
+					SnacksPickerPromptNormal = { fg = fg, bg = theme.bg0 },
+					SnacksPickerPromptPrefix = { fg = theme.purple, bg = theme.bg0 },
+					SnacksPickerPromptTitle = { fg = bg, bg = theme.purple },
+					SnacksPickerResultsBorder = { fg = theme.bg3, bg = theme.bg0 },
+					SnacksPickerResultsNormal = { bg = theme.bg0 },
+					SnacksPickerResultsTitle = { fg = theme.gray0, bg = theme.bg0 },
+					SnacksPickerSelection = { bg = theme.bg2 },
+					SnacksPickerContext = { fg = theme.gray1, bg = theme.bg1 },
 
-          SnacksDashboardDir = { fg = theme.fg },
+					SnacksDashboardDir = { fg = theme.fg },
 
-          WinBar = { fg = theme.gray1, bg = bg },
+					WinBar = { fg = theme.gray1, bg = bg },
 
-          NeoTreeNormal = { fg = theme.fg, bg = theme.bg0 },
-          NeoTreeTabInactive = { fg = theme.gray1, bg = theme.bg_dim },
-          NeoTreeEndOfBuffer = { fg = theme.fg, bg = theme.bg0 },
-          NeoTreeTabSeparatorInactive = { fg = theme.bg_dim, bg = theme.bg_dim },
+					NeoTreeNormal = { fg = theme.fg, bg = theme.bg0 },
+					NeoTreeTabInactive = { fg = theme.gray1, bg = theme.bg_dim },
+					NeoTreeEndOfBuffer = { fg = theme.fg, bg = theme.bg0 },
+					NeoTreeTabSeparatorInactive = { fg = theme.bg_dim, bg = theme.bg_dim },
 
-          FloatBorder = { fg = theme.bg2, bg = theme.bg1 },
-          NeotreeFloatBorder = { fg = theme.gray1, bg = theme.bg0 },
-          NormalFloat = { bg = theme.bg1 },
-        }
-      end,
-    },
-    -- Icons can be configured throughout the interface
-    icons = {
-      -- configure the loading of the lsp in the status line
-      LSPLoading1 = "⠋",
-      LSPLoading2 = "⠙",
-      LSPLoading3 = "⠹",
-      LSPLoading4 = "⠸",
-      LSPLoading5 = "⠼",
-      LSPLoading6 = "⠴",
-      LSPLoading7 = "⠦",
-      LSPLoading8 = "⠧",
-      LSPLoading9 = "⠇",
-      LSPLoading10 = "⠏",
-    },
-  },
+					FloatBorder = { fg = theme.bg2, bg = theme.bg1 },
+					NeotreeFloatBorder = { fg = theme.gray1, bg = theme.bg0 },
+					NormalFloat = { bg = theme.bg1 },
+				}
+			end,
+		},
+		-- Icons can be configured throughout the interface
+		icons = {
+			-- configure the loading of the lsp in the status line
+			LSPLoading1 = "⠋",
+			LSPLoading2 = "⠙",
+			LSPLoading3 = "⠹",
+			LSPLoading4 = "⠸",
+			LSPLoading5 = "⠼",
+			LSPLoading6 = "⠴",
+			LSPLoading7 = "⠦",
+			LSPLoading8 = "⠧",
+			LSPLoading9 = "⠇",
+			LSPLoading10 = "⠏",
+		},
+	},
 }
