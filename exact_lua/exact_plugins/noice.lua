@@ -35,7 +35,7 @@ return {
       },
 
       messages = {
-        view = "mini", -- default view for messages
+        view = "mini",   -- default view for messages
         view_error = "mini", -- view for errors
         view_warn = "mini", -- view for warnings
         view_search = "mini",
@@ -54,23 +54,33 @@ return {
         n = {
           ["<Leader>fN"] = { desc = "noice" },
           ["<Leader>fNl"] = {
-            function() require("noice").cmd "last" end,
+            function()
+              require("noice").cmd("last")
+            end,
             desc = "Noice Last Message",
           },
           ["<Leader>fNh"] = {
-            function() require("noice").cmd "history" end,
+            function()
+              require("noice").cmd("history")
+            end,
             desc = "Noice History",
           },
           ["<Leader>fNa"] = {
-            function() require("noice").cmd "all" end,
+            function()
+              require("noice").cmd("all")
+            end,
             desc = "Noice All",
           },
           ["<Leader>fNd"] = {
-            function() require("noice").cmd "dismiss" end,
+            function()
+              require("noice").cmd("dismiss")
+            end,
             desc = "Dismiss All",
           },
           ["<Leader>fn"] = {
-            function() require("noice").cmd "pick" end,
+            function()
+              require("noice").cmd("pick")
+            end,
             desc = "Noice Picker (Telescope/FzfLua)",
           },
         },
