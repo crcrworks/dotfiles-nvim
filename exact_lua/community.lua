@@ -32,6 +32,8 @@ return {
 	{ import = "astrocommunity.editing-support.wildfire-nvim" },
 	{ import = "astrocommunity.editing-support.neogen" },
 
+	{ import = "astrocommunity.completion.avante-nvim" },
+
 	{ import = "astrocommunity.keybinding.nvcheatsheet-nvim" },
 
 	{ import = "astrocommunity.terminal-integration.flatten-nvim" },
