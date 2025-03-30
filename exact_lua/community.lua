@@ -15,6 +15,7 @@ return {
 	{ import = "astrocommunity.pack.fish" },
 	{ import = "astrocommunity.pack.sql" },
 	{ import = "astrocommunity.pack.typst" },
+	{ import = "astrocommunity.pack.chezmoi" },
 
 	{ import = "astrocommunity.recipes.picker-nvchad-theme" },
 	{ import = "astrocommunity.recipes.vscode-icons" },
