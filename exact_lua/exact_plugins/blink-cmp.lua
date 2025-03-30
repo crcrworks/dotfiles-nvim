@@ -3,6 +3,7 @@ return {
 	version = "*",
 	opts = {
 		keymap = {
+			preset = "none",
 			["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
 			["<C-e>"] = { "hide" },
 			["<C-y>"] = { "select_and_accept" },
