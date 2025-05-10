@@ -4,10 +4,6 @@
 
 vim.cmd([[
   xnoremap p "_dP
-  " nnoremap <C-c> <Esc>
-  " inoremap <C-c> <Esc>
-  " vnoremap <C-c> <Esc>
-  " cnoremap <C-c> <Esc>
 ]])
 
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
