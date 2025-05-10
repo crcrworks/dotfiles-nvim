@@ -32,6 +32,7 @@ return {
 				wrap = true, -- sets vim.opt.wrap
 				conceallevel = 2,
 				numberwidth = 1,
+				guicursor = "c-i:hor20",
 			},
 			g = { -- vim.g.<key>
 				-- configure global vim variables (vim.g)
